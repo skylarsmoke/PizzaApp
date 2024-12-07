@@ -1,0 +1,82 @@
+﻿@{
+    ViewData["Title"] = "Login";
+}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>@ViewData["Title"]</title>
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            font-family: 'Roboto', sans-serif;
+            background-color: #1e1e1e; 
+            color: #dcdcdc; 
+        }
+
+        .container {
+            text-align: center;
+            background: #252526; 
+            padding: 40px;
+            border-radius: 16px;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5);
+            width: 100%;
+            max-width: 600px;
+        }
+
+        h1 {
+            font-size: 2rem;
+            font-weight: bold;
+            margin-bottom: 30px;
+            color: #dcdcdc;
+        }
+
+        button {
+            margin: 10px;
+            padding: 10px 20px;
+            font-size: 16px;
+            font-weight: bold;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .owner-btn {
+            background-color: #007acc; 
+            color: white;
+        }
+
+            .owner-btn:hover {
+                background-color: #005a9e;
+                transform: translateY(-3px);
+                box-shadow: 0 4px 12px rgba(0, 122, 204, 0.5);
+            }
+
+        .chef-btn {
+            background-color: #007acc;
+            color: white;
+        }
+
+            .chef-btn:hover {
+                background-color: #005a9e;
+                transform: translateY(-3px);
+                box-shadow: 0 4px 12px rgba(90, 90, 90, 0.5);
+            }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Pizza App Login</h1>
+        <button class="owner-btn" onclick="location.href='/Home/OwnerLogin'">Login as Pizza Store Owner</button>
+        <button class="chef-btn" onclick="location.href='/Home/ChefLogin'">Login as Pizza Chef</button>
+    </div>
+
+</body>
+</html>

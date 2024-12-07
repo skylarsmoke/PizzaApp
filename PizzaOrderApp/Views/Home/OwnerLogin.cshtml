@@ -1,0 +1,330 @@
+﻿@{
+    ViewData["Title"] = "Pizza Store Owner";
+}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>@ViewData["Title"]</title>
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            font-family: 'Roboto', sans-serif;
+            background-color: #1e1e1e; 
+            color: #dcdcdc; 
+        }
+
+        .container {
+            position: relative; 
+            text-align: center;
+            background: #252526;
+            padding: 40px;
+            border-radius: 16px;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5);
+            width: 100%;
+            max-width: 800px;
+        }
+
+        .back-btn {
+            position: absolute; 
+            top: 10px; 
+            left: 10px; 
+            background-color: #007acc; 
+            color: white;
+            padding: 8px 16px;
+            font-size: 14px;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+            .back-btn:hover {
+                background-color: #005a9e; 
+            }
+
+        h1 {
+            font-size: 2rem;
+            font-weight: bold;
+            margin-bottom: 30px;
+            color: #dcdcdc; 
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 20px 0;
+        }
+
+        th, td {
+            border: 1px solid #3c3c3c;
+            padding: 8px;
+            text-align: center;
+            color: #dcdcdc;
+        }
+
+        th {
+            background-color: #3c3c3c; 
+        }
+
+        input[type="text"] {
+            width: 80%;
+            padding: 10px;
+            margin: 10px 0;
+            border: 1px solid #3c3c3c;
+            border-radius: 8px;
+            background-color: #1e1e1e; 
+            color: #dcdcdc;
+        }
+
+        button {
+            margin: 5px;
+            padding: 10px 20px;
+            font-size: 16px;
+            font-weight: bold;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .add-btn {
+            background-color: #007acc; 
+            color: white;
+        }
+
+            .add-btn:hover {
+                background-color: #005a9e;
+                transform: translateY(-3px);
+                box-shadow: 0 4px 12px rgba(0, 122, 204, 0.5);
+            }
+
+        .edit-btn, .delete-btn {
+            padding: 5px 10px;
+            border-radius: 8px;
+        }
+
+        .edit-btn {
+            background-color: #dcdcdc;
+            color: black;
+        }
+
+            .edit-btn:hover {
+                background-color: #b8b8b8;
+            }
+
+        .delete-btn {
+            background-color: #dc3545; 
+            color: white;
+        }
+
+            .delete-btn:hover {
+                background-color: #bd2130;
+            }
+
+            .delete-btn:disabled {
+                background-color: #a1a1a1; /* A lighter gray to indicate disabled state */
+                color: #5a5a5a; /* Darker text color for contrast */
+                cursor: not-allowed; /* Change cursor to indicate the button is not clickable */
+                box-shadow: none; /* Remove any shadow effect */
+                transform: none; /* Ensure no hover transform effect */
+            }
+
+            .delete-btn:hover:disabled {
+                background-color: #a1a1a1; /* Keep the same color on hover when disabled */
+                transform: none; /* Disable hover transform effect */
+                box-shadow: none; /* No shadow on hover */
+            }
+
+
+        .error {
+            color: #e06c75; 
+            font-size: 14px;
+            margin-top: 10px;
+        }
+
+
+    </style>
+</head>
+<body>
+    <div class="container">
+        <button class="back-btn" onclick="location.href='/Home/Index'">Back to Login</button>
+        <h1>Manage Pizza Toppings</h1>
+        <input type="text" id="itemInput" placeholder="Enter topping name" />
+        <button class="add-btn" onclick="addItem()">Add Topping</button>
+        <p id="errorMessage" class="error"></p>
+        <table id="itemsTable">
+            <thead>
+                <tr>
+                    <th>#</th>
+                    <th>Topping Name</th>
+                    <th>Actions</th>
+                </tr>
+            </thead>
+            <tbody>
+                
+            </tbody>
+        </table>
+    </div>
+
+    <script>
+        const items = new Set(); // Using a Set to ensure there are no duplicates
+        const itemsTable = document.getElementById("itemsTable").querySelector("tbody");
+        const errorMessage = document.getElementById("errorMessage");
+
+        async function loadToppings() {
+            try {
+                const response = await fetch('/api/chef/toppings'); // Ensure the path matches your backend
+
+                if (!response.ok) {
+                    throw new Error(`Failed to fetch toppings. Status: ${response.status}`);
+                }
+
+                const toppings = await response.json(); // Parse JSON response
+
+                // Clear table and add toppings to the table
+                itemsTable.innerHTML = ""; // Clear existing rows
+                let i = 1;
+                toppings.forEach(topping => {
+                    addItem(topping)
+                });
+            } catch (error) {
+                console.error("Error loading toppings:", error); // Log error details
+                errorMessage.textContent = "Error loading toppings. Please try again.";
+            }
+        }
+
+
+        async function addItem(itemToAdd = "") {
+            const itemInput = document.getElementById("itemInput");
+            var itemName = itemInput.value.trim();
+
+            if (itemToAdd !== "") {
+                itemName = itemToAdd;
+            }
+            else {
+                // sends an HTTP POST request
+                const response = await fetch('/api/chef/addtopping', {
+                    method: 'POST',
+                    headers: { 'Content-type': 'application/json' },
+                    body: JSON.stringify(itemName)
+                });
+
+                if (!response.ok) {
+                    const errorMessage = await response.text();
+                    console.error("Error adding topping:", errorMessage);
+                    alert(errorMessage);
+                    return;
+                }
+
+                console.log("Topping added.");
+            }
+            
+            // Check if the item is empty or a duplicate
+            if (!itemName) {
+                errorMessage.textContent = "Topping name cannot be empty.";
+                return;
+            }
+
+            if (items.has(itemName)) {
+                errorMessage.textContent = `The topping "${itemName}" is already in the list.`;
+                return;
+            }
+
+
+
+            // Add the item to the Set and table
+            items.add(itemName);
+            if (items.size == 2) updateDeleteButton();
+            errorMessage.textContent = ""; // Clear error message
+
+            const row = document.createElement("tr");
+            row.innerHTML = `
+                        <td>${items.size}</td>
+                        <td class="topping-name">${itemName}</td>
+                        <td>
+                            <button class="edit-btn" onclick="editItem(this)">Edit</button>
+                            <button class="delete-btn" onclick="deleteItem(this)">Delete</button>
+                        </td>
+                    `;
+            itemsTable.appendChild(row);
+
+            // Clear the input field
+            itemInput.value = "";
+        }
+
+        // deletes items from our toppings
+        async function deleteItem(button) {
+            const row = button.closest("tr");
+            const itemName = row.querySelector(".topping-name").textContent;
+
+            const response = await fetch(`/api/chef/deletetopping/${itemName}`, { method: 'DELETE' });
+
+            if (!response.ok) {
+                alert("Error deleting topping.");
+                return;
+            }
+
+            // Remove from the Set and table
+            items.delete(itemName);
+            row.remove();
+
+            // Update row numbers
+            updateRowNumbers();
+
+            // we check to make sure we have at least one item
+            updateDeleteButton();
+        }
+
+        // edits toppings
+        function editItem(button) {
+            const row = button.closest("tr");
+            const toppingCell = row.querySelector(".topping-name");
+            const oldName = toppingCell.textContent;
+            const newName = prompt("Edit topping name:", oldName);
+
+            if (!newName || newName.trim() === "" || newName.trim() === oldName) return;
+
+            if (items.has(newName.trim())) {
+                alert(`The topping "${newName}" is already in the list.`);
+                return;
+            }
+
+            // Update the Set and the table
+            items.delete(oldName);
+            items.add(newName.trim());
+            toppingCell.textContent = newName.trim();
+        }
+
+        // updates the row numbers for our table
+        function updateRowNumbers() {
+            const rows = itemsTable.querySelectorAll("tr");
+            rows.forEach((row, index) => {
+                row.querySelector("td").textContent = index + 1;
+            });
+        }
+
+        function updateDeleteButton() {
+            const deleteButtons = document.querySelectorAll(".delete-btn");
+            const toppingCount = items.size;
+
+            deleteButtons.forEach(button => {
+
+                if (toppingCount < 2) button.disabled = true;
+                else button.disabled = false;
+            });
+        }
+
+        window.onload = async function () {
+            await loadToppings();
+            updateDeleteButton();
+        }
+    </script>
+</body>
+</html>

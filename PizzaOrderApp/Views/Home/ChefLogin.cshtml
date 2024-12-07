@@ -1,0 +1,285 @@
+﻿@{
+    ViewData["Title"] = "Pizza Chef";
+}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>@ViewData["Title"]</title>
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            font-family: 'Roboto', sans-serif;
+            background-color: #1e1e1e; /* Visual Studio dark background */
+            color: #dcdcdc; /* Light gray text */
+        }
+
+        .container {
+            position: relative; /* Enable positioning of child elements */
+            text-align: center;
+            background: #252526;
+            padding: 40px;
+            border-radius: 16px;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5);
+            width: 100%;
+            max-width: 800px;
+        }
+
+        .back-btn {
+            position: absolute; /* Position relative to the container */
+            top: 10px; /* Distance from the top of the container */
+            left: 10px; /* Distance from the left of the container */
+            background-color: #007acc; /* Visual Studio blue */
+            color: white;
+            padding: 8px 16px;
+            font-size: 14px;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+            .back-btn:hover {
+                background-color: #005a9e; 
+            }
+
+        h1 {
+            font-size: 2rem;
+            font-weight: bold;
+            margin-bottom: 20px;
+            color: #dcdcdc;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 20px 0;
+        }
+
+        th, td {
+            border: 1px solid #3c3c3c;
+            padding: 8px;
+            text-align: center;
+        }
+
+        th {
+            background-color: #3c3c3c;
+            color: #dcdcdc;
+        }
+
+        select {
+            width: 100%;
+            padding: 8px;
+            margin: 8px 0;
+            border: 1px solid #3c3c3c;
+            border-radius: 8px;
+            background-color: #1e1e1e;
+            color: #dcdcdc;
+        }
+
+        button {
+            margin: 8px;
+            padding: 10px 20px;
+            font-size: 14px;
+            font-weight: bold;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .add-btn {
+            background-color: #007acc;
+            color: white;
+        }
+
+            .add-btn:hover {
+                background-color: #005a9e;
+            }
+
+        .edit-btn {
+            background-color: #dcdcdc;
+            color: black;
+        }
+
+            .edit-btn:hover {
+                background-color: #b8b8b8;
+            }
+
+        .delete-btn {
+            background-color: #dc3545;
+            color: white;
+        }
+
+            .delete-btn:hover {
+                background-color: #bd2130;
+            }
+
+        .error {
+            color: #e06c75;
+            font-size: 14px;
+        }
+
+        input[type="text"] {
+            width: 80%;
+            padding: 10px;
+            margin: 10px 0;
+            border: 1px solid #3c3c3c;
+            border-radius: 8px;
+            background-color: #1e1e1e;
+            color: #dcdcdc;
+        }
+    </style>
+</head>
+<body>
+    
+    <div class="container">
+
+        <button class="back-btn" onclick="location.href='/Home/Index'">Back to Login</button>
+        <h1>Create New Pizza</h1>
+        <input type="text" id="pizzaNameInput" placeholder="Enter pizza name" />
+        <p>Hold CTRL to select multiple toppings.</p>
+        <select id="toppingSelect" multiple>
+            
+        </select>
+        <button class="add-btn" onclick="addPizza()">Add Pizza</button>
+        <p id="errorMessage" class="error"></p>
+
+        <h2>Existing Pizzas</h2>
+        <table id="pizzasTable">
+            <thead>
+                <tr>
+                    <th>#</th>
+                    <th>Pizza Name</th>
+                    <th>Toppings</th>
+                    <th>Actions</th>
+                </tr>
+            </thead>
+            <tbody>
+                
+            </tbody>
+        </table>
+    </div>
+
+
+    <script>
+        const pizzasTable = document.getElementById("pizzasTable").querySelector("tbody");
+        const toppingSelect = document.getElementById("toppingSelect");
+        const errorMessage = document.getElementById("errorMessage");
+
+        // gets our pizza toppings from memory
+        async function loadToppings() {
+            const response = await fetch('/api/chef/toppings');
+            const data = await response.json();
+            data.forEach(topping => {
+                const option = document.createElement("option");
+                option.value = topping;
+                option.textContent = topping;
+                toppingSelect.appendChild(option);
+            });
+        }
+
+        // gets our pizzas from memory
+        async function loadPizzas() {
+            const response = await fetch('/api/chef/pizzas');
+            const data = await response.json();
+            data.forEach(pizza => addPizzaRow(pizza));
+        }
+
+        // adds a pizza to our stored list
+        async function addPizza() {
+            const pizzaNameInput = document.getElementById("pizzaNameInput");
+            const selectedToppings = Array.from(toppingSelect.selectedOptions).map(option => option.value);
+            const pizzaName = pizzaNameInput.value.trim();
+
+            if (!pizzaName) {
+                errorMessage.textContent = "Pizza name cannot be empty.";
+                return;
+            }
+
+            if (selectedToppings.length === 0) {
+                errorMessage.textContent = "You must select at least one topping.";
+                return;
+            }
+
+            const response = await fetch('/api/chef/addpizza', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify({ name: pizzaName, toppings: selectedToppings })
+            });
+
+            if (response.ok) {
+                addPizzaRow({ name: pizzaName, toppings: selectedToppings });
+                pizzaNameInput.value = "";
+                toppingSelect.value = "";
+                errorMessage.textContent = "";
+            } else {
+                const error = await response.text();
+                errorMessage.textContent = error;
+            }
+        }
+
+        // deletes pizzas from our stored list
+        async function deletePizza(name) {
+            const response = await fetch(`/api/chef/pizzas/${name}`, { method: 'DELETE' });
+            if (response.ok) {
+                updatePizzasTable();
+            } else {
+                alert("Error deleting pizza.");
+            }
+        }
+
+        // edits the given pizza
+        async function editPizza(name) {
+            const currentToppings = pizzas.get(name);
+            const newToppings = prompt("Enter new toppings (comma separated):", currentToppings.join(", "));
+            if (!newToppings) return;
+
+            const toppingsArray = newToppings.split(",").map(t => t.trim());
+            const response = await fetch(`/api/chef/pizzas/${name}`, {
+                method: 'PUT',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify({ name, toppings: toppingsArray })
+            });
+
+            if (response.ok) {
+                updatePizzasTable();
+            } else {
+                alert("Error updating pizza.");
+            }
+        }
+
+        // adds a new row for each pizza
+        function addPizzaRow(pizza) {
+            const row = document.createElement("tr");
+            row.innerHTML = `
+                    <td>${pizzasTable.rows.length + 1}</td>
+                    <td>${pizza.name}</td>
+                    <td>${pizza.toppings.join(", ")}</td>
+                    <td>
+                        <button class="edit-btn" onclick="editPizza('${pizza.name}')">Edit</button>
+                        <button class="delete-btn" onclick="deletePizza('${pizza.name}')">Delete</button>
+                    </td>
+                `;
+            pizzasTable.appendChild(row);
+        }
+
+        // updates our pizza table that is seen by the user
+        async function updatePizzasTable() {
+            pizzasTable.innerHTML = ""; // Clear the table
+            await loadPizzas();
+        }
+
+        window.onload = async function () {
+            await loadToppings();
+            await loadPizzas();
+        };
+    </script>
+</body>
+</html>

@@ -1,0 +1,107 @@
+[
+  {
+    "ContainingType": "PizzaOrderApp.Controllers.ChefController",
+    "Method": "AddPizza",
+    "RelativePath": "api/chef/addpizza",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "pizza",
+        "Type": "PizzaOrderApp.Controllers.Pizza",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "PizzaOrderApp.Controllers.ChefController",
+    "Method": "AddTopping",
+    "RelativePath": "api/chef/addtopping",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "topping",
+        "Type": "System.String",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "PizzaOrderApp.Controllers.ChefController",
+    "Method": "DeleteTopping",
+    "RelativePath": "api/chef/deletetopping/{topping}",
+    "HttpMethod": "DELETE",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "topping",
+        "Type": "System.String",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "PizzaOrderApp.Controllers.ChefController",
+    "Method": "GetPizzas",
+    "RelativePath": "api/chef/pizzas",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "PizzaOrderApp.Controllers.ChefController",
+    "Method": "UpdatePizza",
+    "RelativePath": "api/chef/pizzas/{name}",
+    "HttpMethod": "PUT",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "name",
+        "Type": "System.String",
+        "IsRequired": true
+      },
+      {
+        "Name": "pizza",
+        "Type": "PizzaOrderApp.Controllers.Pizza",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "PizzaOrderApp.Controllers.ChefController",
+    "Method": "DeletePizza",
+    "RelativePath": "api/chef/pizzas/{name}",
+    "HttpMethod": "DELETE",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "name",
+        "Type": "System.String",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "PizzaOrderApp.Controllers.ChefController",
+    "Method": "GetToppings",
+    "RelativePath": "api/chef/toppings",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
+  }
+]
