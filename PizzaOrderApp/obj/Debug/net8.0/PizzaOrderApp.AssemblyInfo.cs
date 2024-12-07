@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("PizzaOrderApp")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+01c4262f883478c78beffaf45cb35d69accd6167")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+5ea2930425e793fa49fa35e69898ba2fb617bd77")]
 [assembly: System.Reflection.AssemblyProductAttribute("PizzaOrderApp")]
 [assembly: System.Reflection.AssemblyTitleAttribute("PizzaOrderApp")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

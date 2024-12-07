@@ -236,6 +236,7 @@
         async function deletePizza(name) {
             const response = await fetch(`/api/chef/pizzas/${name}`, { method: 'DELETE' });
             if (response.ok) {
+                pizzas.delete(name);
                 updatePizzasTable();
             } else {
                 alert("Error deleting pizza.");
@@ -245,23 +246,97 @@
         // edits the given pizza
         async function editPizza(name) {
             const currentToppings = pizzas.get(name);
-            const newToppings = prompt("Enter new toppings (comma separated):", currentToppings.join(", "));
-            if (!newToppings) return;
 
-            const toppingsArray = newToppings.split(",").map(t => t.trim());
-            const response = await fetch(`/api/chef/pizzas/${name}`, {
-                method: 'PUT',
-                headers: { 'Content-Type': 'application/json' },
-                body: JSON.stringify({ name, toppings: toppingsArray })
+            // Create a modal-like structure for selecting toppings
+            const modal = document.createElement('div');
+            modal.style.position = 'fixed';
+            modal.style.top = '0';
+            modal.style.left = '0';
+            modal.style.width = '100%';
+            modal.style.height = '100%';
+            modal.style.backgroundColor = 'rgba(0, 0, 0, 0.5)';
+            modal.style.display = 'flex';
+            modal.style.justifyContent = 'center';
+            modal.style.alignItems = 'center';
+            modal.style.zIndex = '1000';
+
+            const modalContent = document.createElement('div');
+            modalContent.style.backgroundColor = '#252526';
+            modalContent.style.padding = '20px';
+            modalContent.style.borderRadius = '10px';
+            modalContent.style.boxShadow = '0 4px 10px rgba(0, 0, 0, 0.5)';
+            modalContent.style.textAlign = 'center';
+
+            const title = document.createElement('h2');
+            title.textContent = `Edit Toppings for ${name}`;
+            title.style.color = '#dcdcdc';
+            modalContent.appendChild(title);
+
+            const select = document.createElement('select');
+            select.multiple = true;
+            select.style.width = '100%';
+            select.style.margin = '10px 0';
+            select.style.padding = '10px';
+            select.style.borderRadius = '8px';
+            select.style.backgroundColor = '#1e1e1e';
+            select.style.color = '#dcdcdc';
+
+            // Populate the select element with current toppings
+            toppingSelect.querySelectorAll('option').forEach(option => {
+                const newOption = option.cloneNode(true);
+                if (currentToppings.includes(newOption.value)) {
+                    newOption.selected = true;
+                }
+                select.appendChild(newOption);
             });
 
-            if (response.ok) {
-                pizzas.set(name, toppingsArray);
-                updatePizzasTable();
-            } else {
-                alert("Error updating pizza.");
-            }
+            modalContent.appendChild(select);
+
+            const saveButton = document.createElement('button');
+            saveButton.textContent = 'Save Changes';
+            saveButton.style.margin = '10px';
+            saveButton.style.padding = '10px 20px';
+            saveButton.style.backgroundColor = '#007acc';
+            saveButton.style.color = 'white';
+            saveButton.style.border = 'none';
+            saveButton.style.borderRadius = '8px';
+            saveButton.style.cursor = 'pointer';
+            saveButton.addEventListener('click', async () => {
+                const selectedToppings = Array.from(select.selectedOptions).map(option => option.value);
+
+                const response = await fetch(`/api/chef/pizzas/${name}`, {
+                    method: 'PUT',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify({ name, toppings: selectedToppings })
+                });
+
+                if (response.ok) {
+                    pizzas.set(name, selectedToppings);
+                    updatePizzasTable();
+                    modal.remove();
+                } else {
+                    alert('Error updating pizza.');
+                }
+            });
+
+            const cancelButton = document.createElement('button');
+            cancelButton.textContent = 'Cancel';
+            cancelButton.style.margin = '10px';
+            cancelButton.style.padding = '10px 20px';
+            cancelButton.style.backgroundColor = '#dc3545';
+            cancelButton.style.color = 'white';
+            cancelButton.style.border = 'none';
+            cancelButton.style.borderRadius = '8px';
+            cancelButton.style.cursor = 'pointer';
+            cancelButton.addEventListener('click', () => modal.remove());
+
+            modalContent.appendChild(saveButton);
+            modalContent.appendChild(cancelButton);
+
+            modal.appendChild(modalContent);
+            document.body.appendChild(modal);
         }
+
 
         // adds a new row for each pizza
         function addPizzaRow(pizza) {
