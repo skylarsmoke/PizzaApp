@@ -29,3 +29,17 @@ This is a full-stack pizza management application designed for restaurant owners
 ```bash
 git clone https://github.com/yourusername/PizzaManagementApp.git
 cd PizzaManagementApp
+```
+### 2. Restore Dependencies
+```bash
+dotnet restore
+```
+### 3. Build the Project
+To build the project:
+```bash
+dotnet build
+```
+### 4. Run the Application
+```bash
+dotnet run
+```
