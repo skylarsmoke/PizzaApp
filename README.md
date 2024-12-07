@@ -14,8 +14,8 @@ This is a full-stack pizza management application designed for restaurant owners
 ## Prerequisites
 
 ### For Building and Running Locally
-1. **.NET SDK** (Version 6.0 or later)  
-   [Download .NET SDK](https://dotnet.microsoft.com/download/dotnet/6.0)
+1. **.NET SDK** (Version 8.0)  
+   [Download .NET SDK](https://dotnet.microsoft.com/download/dotnet/8.0)
 2. **Node.js** (Optional, if you plan to extend with npm packages)  
    [Download Node.js](https://nodejs.org/)
 3. **Visual Studio** or any IDE with C# support (e.g., Visual Studio Code)
