@@ -1,0 +1,7 @@
+C:\Users\skyla\OneDrive\Desktop\Pizza App\PizzaApp\PizzaOrderApp\obj\Release\net8.0\PubTmp\Out\PizzaOrderApp.exe
+C:\Users\skyla\OneDrive\Desktop\Pizza App\PizzaApp\PizzaOrderApp\obj\Release\net8.0\PubTmp\Out\appsettings.Development.json
+C:\Users\skyla\OneDrive\Desktop\Pizza App\PizzaApp\PizzaOrderApp\obj\Release\net8.0\PubTmp\Out\appsettings.json
+C:\Users\skyla\OneDrive\Desktop\Pizza App\PizzaApp\PizzaOrderApp\obj\Release\net8.0\PubTmp\Out\PizzaOrderApp.dll
+C:\Users\skyla\OneDrive\Desktop\Pizza App\PizzaApp\PizzaOrderApp\obj\Release\net8.0\PubTmp\Out\PizzaOrderApp.deps.json
+C:\Users\skyla\OneDrive\Desktop\Pizza App\PizzaApp\PizzaOrderApp\obj\Release\net8.0\PubTmp\Out\PizzaOrderApp.runtimeconfig.json
+C:\Users\skyla\OneDrive\Desktop\Pizza App\PizzaApp\PizzaOrderApp\obj\Release\net8.0\PubTmp\Out\PizzaOrderApp.pdb

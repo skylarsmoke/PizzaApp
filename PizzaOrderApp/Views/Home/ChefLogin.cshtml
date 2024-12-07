@@ -170,6 +170,7 @@
 
     <script>
         const pizzasTable = document.getElementById("pizzasTable").querySelector("tbody");
+        const pizzas = new Map();
         const toppingSelect = document.getElementById("toppingSelect");
         const errorMessage = document.getElementById("errorMessage");
 
@@ -189,7 +190,12 @@
         async function loadPizzas() {
             const response = await fetch('/api/chef/pizzas');
             const data = await response.json();
-            data.forEach(pizza => addPizzaRow(pizza));
+
+            pizzas.clear(); // Clear the map before reloading
+            data.forEach(pizza => {
+                pizzas.set(pizza.name, pizza.toppings); 
+                addPizzaRow(pizza); // Add to table
+            });
         }
 
         // adds a pizza to our stored list
@@ -216,6 +222,7 @@
 
             if (response.ok) {
                 addPizzaRow({ name: pizzaName, toppings: selectedToppings });
+                pizzas.set(pizzaName, selectedToppings);
                 pizzaNameInput.value = "";
                 toppingSelect.value = "";
                 errorMessage.textContent = "";
@@ -249,6 +256,7 @@
             });
 
             if (response.ok) {
+                pizzas.set(name, toppingsArray);
                 updatePizzasTable();
             } else {
                 alert("Error updating pizza.");
@@ -273,7 +281,9 @@
         // updates our pizza table that is seen by the user
         async function updatePizzasTable() {
             pizzasTable.innerHTML = ""; // Clear the table
-            await loadPizzas();
+            pizzas.forEach((toppings, name) => {
+                addPizzaRow({ name, toppings });
+            });
         }
 
         window.onload = async function () {

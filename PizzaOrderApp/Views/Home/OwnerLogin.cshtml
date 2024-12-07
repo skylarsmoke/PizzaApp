@@ -190,9 +190,13 @@
 
                 // Clear table and add toppings to the table
                 itemsTable.innerHTML = ""; // Clear existing rows
-                let i = 1;
+                items.clear();
+                
                 toppings.forEach(topping => {
-                    addItem(topping)
+                    if (topping) {
+                        addItem(topping, true)
+                    }
+                    
                 });
             } catch (error) {
                 console.error("Error loading toppings:", error); // Log error details
@@ -201,10 +205,24 @@
         }
 
 
-        async function addItem(itemToAdd = "") {
+        async function addItem(itemToAdd = "", loading = false) {
             const itemInput = document.getElementById("itemInput");
             var itemName = itemInput.value.trim();
 
+            if (!loading) {
+                // Check if the item is empty or a duplicate
+                if (!itemName) {
+                    errorMessage.textContent = "Topping name cannot be empty.";
+                    return;
+                }
+
+                if (items.has(itemName)) {
+                    errorMessage.textContent = `The topping "${itemName}" is already in the list.`;
+                    return;
+                }
+            }
+            
+            // if our itemToAdd is not blank then we know it is a part of the initial toppings
             if (itemToAdd !== "") {
                 itemName = itemToAdd;
             }
@@ -225,19 +243,6 @@
 
                 console.log("Topping added.");
             }
-            
-            // Check if the item is empty or a duplicate
-            if (!itemName) {
-                errorMessage.textContent = "Topping name cannot be empty.";
-                return;
-            }
-
-            if (items.has(itemName)) {
-                errorMessage.textContent = `The topping "${itemName}" is already in the list.`;
-                return;
-            }
-
-
 
             // Add the item to the Set and table
             items.add(itemName);
@@ -283,7 +288,7 @@
         }
 
         // edits toppings
-        function editItem(button) {
+        async function editItem(button) {
             const row = button.closest("tr");
             const toppingCell = row.querySelector(".topping-name");
             const oldName = toppingCell.textContent;
@@ -293,6 +298,19 @@
 
             if (items.has(newName.trim())) {
                 alert(`The topping "${newName}" is already in the list.`);
+                return;
+            }
+
+            const response = await fetch('/api/chef/updatetopping', {
+                method: 'PUT',
+                headers: { 'Content-type': 'application/json' },
+                body: JSON.stringify({ oldName, newName: newName.trim() })
+            });
+
+            if (!response.ok) {
+                const error = await response.text();
+                console.error("Error updating topping:", error);
+                alert("Failed to update topping.");
                 return;
             }
 

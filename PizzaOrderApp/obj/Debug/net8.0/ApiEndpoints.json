@@ -103,5 +103,21 @@
     "Order": 0,
     "Parameters": [],
     "ReturnTypes": []
+  },
+  {
+    "ContainingType": "PizzaOrderApp.Controllers.ChefController",
+    "Method": "UpdateTopping",
+    "RelativePath": "api/chef/updatetopping",
+    "HttpMethod": "PUT",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "request",
+        "Type": "PizzaOrderApp.Controllers.UpdateToppingRequest",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
   }
 ]

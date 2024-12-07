@@ -14,11 +14,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\skyla\\OneDrive\\Desktop\\Pizza App\\PizzaOrderApp\\PizzaOrderApp.csproj",
+      "projectUniqueName": "C:\\Users\\skyla\\OneDrive\\Desktop\\Pizza App\\PizzaApp\\PizzaOrderApp\\PizzaOrderApp.csproj",
       "projectName": "PizzaOrderApp",
-      "projectPath": "C:\\Users\\skyla\\OneDrive\\Desktop\\Pizza App\\PizzaOrderApp\\PizzaOrderApp.csproj",
+      "projectPath": "C:\\Users\\skyla\\OneDrive\\Desktop\\Pizza App\\PizzaApp\\PizzaOrderApp\\PizzaOrderApp.csproj",
       "packagesPath": "C:\\Users\\skyla\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\skyla\\OneDrive\\Desktop\\Pizza App\\PizzaOrderApp\\obj\\",
+      "outputPath": "C:\\Users\\skyla\\OneDrive\\Desktop\\Pizza App\\PizzaApp\\PizzaOrderApp\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"

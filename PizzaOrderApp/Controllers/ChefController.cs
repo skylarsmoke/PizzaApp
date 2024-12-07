@@ -41,6 +41,15 @@ namespace PizzaOrderApp.Controllers
             return Ok();
         }
 
+        [HttpPut("updatetopping")]
+        public IActionResult UpdateTopping([FromBody] UpdateToppingRequest request)
+        {
+            if (!Toppings.Contains(request.OldName)) return BadRequest("This topping does not exist");
+
+            Toppings[Toppings.IndexOf(request.OldName)] = request.NewName;
+            return Ok();
+        }
+
         [HttpGet("pizzas")]
         public IActionResult GetPizzas()
         {
@@ -96,5 +105,14 @@ namespace PizzaOrderApp.Controllers
     {
         public required string Name { get; set; }
         public required List<string> Toppings { get; set; }
+    }
+
+    /// <summary>
+    /// Object to hold update topping data
+    /// </summary>
+    public class UpdateToppingRequest
+    {
+        public required string OldName { get; set; }
+        public required string NewName { get; set; }
     }
 }

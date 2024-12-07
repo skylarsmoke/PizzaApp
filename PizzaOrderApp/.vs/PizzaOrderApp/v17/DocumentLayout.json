@@ -1,33 +1,33 @@
 {
   "Version": 1,
-  "WorkspaceRootPath": "C:\\Users\\skyla\\OneDrive\\Desktop\\Pizza App\\PizzaOrderApp\\",
+  "WorkspaceRootPath": "C:\\Users\\skyla\\OneDrive\\Desktop\\Pizza App\\PizzaApp\\PizzaOrderApp\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{F8041F6B-F2F8-41E4-A921-90E523EB1C99}|PizzaOrderApp.csproj|c:\\users\\skyla\\onedrive\\desktop\\pizza app\\pizzaorderapp\\controllers\\chefcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{F8041F6B-F2F8-41E4-A921-90E523EB1C99}|PizzaOrderApp.csproj|c:\\users\\skyla\\onedrive\\desktop\\pizza app\\pizzaapp\\pizzaorderapp\\controllers\\chefcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{F8041F6B-F2F8-41E4-A921-90E523EB1C99}|PizzaOrderApp.csproj|solutionrelative:controllers\\chefcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{F8041F6B-F2F8-41E4-A921-90E523EB1C99}|PizzaOrderApp.csproj|c:\\users\\skyla\\onedrive\\desktop\\pizza app\\pizzaorderapp\\views\\home\\ownerlogin.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{F8041F6B-F2F8-41E4-A921-90E523EB1C99}|PizzaOrderApp.csproj|solutionrelative:views\\home\\ownerlogin.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{F8041F6B-F2F8-41E4-A921-90E523EB1C99}|PizzaOrderApp.csproj|c:\\users\\skyla\\onedrive\\desktop\\pizza app\\pizzaorderapp\\views\\home\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{F8041F6B-F2F8-41E4-A921-90E523EB1C99}|PizzaOrderApp.csproj|solutionrelative:views\\home\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{F8041F6B-F2F8-41E4-A921-90E523EB1C99}|PizzaOrderApp.csproj|c:\\users\\skyla\\onedrive\\desktop\\pizza app\\pizzaorderapp\\views\\home\\cheflogin.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "AbsoluteMoniker": "D:0:0:{F8041F6B-F2F8-41E4-A921-90E523EB1C99}|PizzaOrderApp.csproj|c:\\users\\skyla\\onedrive\\desktop\\pizza app\\pizzaapp\\pizzaorderapp\\views\\home\\cheflogin.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
       "RelativeMoniker": "D:0:0:{F8041F6B-F2F8-41E4-A921-90E523EB1C99}|PizzaOrderApp.csproj|solutionrelative:views\\home\\cheflogin.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{F8041F6B-F2F8-41E4-A921-90E523EB1C99}|PizzaOrderApp.csproj|c:\\users\\skyla\\onedrive\\desktop\\pizza app\\pizzaorderapp\\controllers\\homecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{F8041F6B-F2F8-41E4-A921-90E523EB1C99}|PizzaOrderApp.csproj|c:\\users\\skyla\\onedrive\\desktop\\pizza app\\pizzaapp\\pizzaorderapp\\views\\home\\ownerlogin.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{F8041F6B-F2F8-41E4-A921-90E523EB1C99}|PizzaOrderApp.csproj|solutionrelative:views\\home\\ownerlogin.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F8041F6B-F2F8-41E4-A921-90E523EB1C99}|PizzaOrderApp.csproj|c:\\users\\skyla\\onedrive\\desktop\\pizza app\\pizzaapp\\pizzaorderapp\\views\\home\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{F8041F6B-F2F8-41E4-A921-90E523EB1C99}|PizzaOrderApp.csproj|solutionrelative:views\\home\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F8041F6B-F2F8-41E4-A921-90E523EB1C99}|PizzaOrderApp.csproj|c:\\users\\skyla\\onedrive\\desktop\\pizza app\\pizzaapp\\pizzaorderapp\\controllers\\homecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{F8041F6B-F2F8-41E4-A921-90E523EB1C99}|PizzaOrderApp.csproj|solutionrelative:controllers\\homecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{F8041F6B-F2F8-41E4-A921-90E523EB1C99}|PizzaOrderApp.csproj|c:\\users\\skyla\\onedrive\\desktop\\pizza app\\pizzaorderapp\\properties\\launchsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
+      "AbsoluteMoniker": "D:0:0:{F8041F6B-F2F8-41E4-A921-90E523EB1C99}|PizzaOrderApp.csproj|c:\\users\\skyla\\onedrive\\desktop\\pizza app\\pizzaapp\\pizzaorderapp\\properties\\launchsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
       "RelativeMoniker": "D:0:0:{F8041F6B-F2F8-41E4-A921-90E523EB1C99}|PizzaOrderApp.csproj|solutionrelative:properties\\launchsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{F8041F6B-F2F8-41E4-A921-90E523EB1C99}|PizzaOrderApp.csproj|c:\\users\\skyla\\onedrive\\desktop\\pizza app\\pizzaorderapp\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{F8041F6B-F2F8-41E4-A921-90E523EB1C99}|PizzaOrderApp.csproj|c:\\users\\skyla\\onedrive\\desktop\\pizza app\\pizzaapp\\pizzaorderapp\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{F8041F6B-F2F8-41E4-A921-90E523EB1C99}|PizzaOrderApp.csproj|solutionrelative:program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
@@ -37,42 +37,42 @@
       "VerticalTabListWidth": 256,
       "DocumentGroups": [
         {
-          "DockedWidth": 242,
+          "DockedWidth": 188,
           "SelectedChildIndex": 0,
           "Children": [
             {
               "$type": "Document",
               "DocumentIndex": 0,
               "Title": "ChefController.cs",
-              "DocumentMoniker": "C:\\Users\\skyla\\OneDrive\\Desktop\\Pizza App\\PizzaOrderApp\\Controllers\\ChefController.cs",
+              "DocumentMoniker": "C:\\Users\\skyla\\OneDrive\\Desktop\\Pizza App\\PizzaApp\\PizzaOrderApp\\Controllers\\ChefController.cs",
               "RelativeDocumentMoniker": "Controllers\\ChefController.cs",
-              "ToolTip": "C:\\Users\\skyla\\OneDrive\\Desktop\\Pizza App\\PizzaOrderApp\\Controllers\\ChefController.cs",
+              "ToolTip": "C:\\Users\\skyla\\OneDrive\\Desktop\\Pizza App\\PizzaApp\\PizzaOrderApp\\Controllers\\ChefController.cs",
               "RelativeToolTip": "Controllers\\ChefController.cs",
-              "ViewState": "AQIAACkAAAAAAAAAAAAgwDYAAAD8AAAA",
+              "ViewState": "AQIAADsAAAAAAAAAAAAqwEgAAAAIAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-12-06T21:31:50.92Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 1,
               "Title": "ChefLogin.cshtml",
-              "DocumentMoniker": "C:\\Users\\skyla\\OneDrive\\Desktop\\Pizza App\\PizzaOrderApp\\Views\\Home\\ChefLogin.cshtml",
+              "DocumentMoniker": "C:\\Users\\skyla\\OneDrive\\Desktop\\Pizza App\\PizzaApp\\PizzaOrderApp\\Views\\Home\\ChefLogin.cshtml",
               "RelativeDocumentMoniker": "Views\\Home\\ChefLogin.cshtml",
-              "ToolTip": "C:\\Users\\skyla\\OneDrive\\Desktop\\Pizza App\\PizzaOrderApp\\Views\\Home\\ChefLogin.cshtml",
+              "ToolTip": "C:\\Users\\skyla\\OneDrive\\Desktop\\Pizza App\\PizzaApp\\PizzaOrderApp\\Views\\Home\\ChefLogin.cshtml",
               "RelativeToolTip": "Views\\Home\\ChefLogin.cshtml",
-              "ViewState": "AQIAANsAAAAAAAAAAAAuwOUAAAApAAAA",
+              "ViewState": "AQIAAM0AAAAAAAAAAAAQwNcAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
               "WhenOpened": "2024-12-06T06:22:02.829Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 3,
               "Title": "Index.cshtml",
-              "DocumentMoniker": "C:\\Users\\skyla\\OneDrive\\Desktop\\Pizza App\\PizzaOrderApp\\Views\\Home\\Index.cshtml",
+              "DocumentMoniker": "C:\\Users\\skyla\\OneDrive\\Desktop\\Pizza App\\PizzaApp\\PizzaOrderApp\\Views\\Home\\Index.cshtml",
               "RelativeDocumentMoniker": "Views\\Home\\Index.cshtml",
-              "ToolTip": "C:\\Users\\skyla\\OneDrive\\Desktop\\Pizza App\\PizzaOrderApp\\Views\\Home\\Index.cshtml",
+              "ToolTip": "C:\\Users\\skyla\\OneDrive\\Desktop\\Pizza App\\PizzaApp\\PizzaOrderApp\\Views\\Home\\Index.cshtml",
               "RelativeToolTip": "Views\\Home\\Index.cshtml",
               "ViewState": "AQIAAC4AAAAAAAAAAAAuwE8AAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
@@ -83,9 +83,9 @@
               "$type": "Document",
               "DocumentIndex": 4,
               "Title": "HomeController.cs",
-              "DocumentMoniker": "C:\\Users\\skyla\\OneDrive\\Desktop\\Pizza App\\PizzaOrderApp\\Controllers\\HomeController.cs",
+              "DocumentMoniker": "C:\\Users\\skyla\\OneDrive\\Desktop\\Pizza App\\PizzaApp\\PizzaOrderApp\\Controllers\\HomeController.cs",
               "RelativeDocumentMoniker": "Controllers\\HomeController.cs",
-              "ToolTip": "C:\\Users\\skyla\\OneDrive\\Desktop\\Pizza App\\PizzaOrderApp\\Controllers\\HomeController.cs",
+              "ToolTip": "C:\\Users\\skyla\\OneDrive\\Desktop\\Pizza App\\PizzaApp\\PizzaOrderApp\\Controllers\\HomeController.cs",
               "RelativeToolTip": "Controllers\\HomeController.cs",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAABcAAAAJAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
@@ -96,9 +96,9 @@
               "$type": "Document",
               "DocumentIndex": 5,
               "Title": "launchSettings.json",
-              "DocumentMoniker": "C:\\Users\\skyla\\OneDrive\\Desktop\\Pizza App\\PizzaOrderApp\\Properties\\launchSettings.json",
+              "DocumentMoniker": "C:\\Users\\skyla\\OneDrive\\Desktop\\Pizza App\\PizzaApp\\PizzaOrderApp\\Properties\\launchSettings.json",
               "RelativeDocumentMoniker": "Properties\\launchSettings.json",
-              "ToolTip": "C:\\Users\\skyla\\OneDrive\\Desktop\\Pizza App\\PizzaOrderApp\\Properties\\launchSettings.json",
+              "ToolTip": "C:\\Users\\skyla\\OneDrive\\Desktop\\Pizza App\\PizzaApp\\PizzaOrderApp\\Properties\\launchSettings.json",
               "RelativeToolTip": "Properties\\launchSettings.json",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAABcAAAAcAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
@@ -109,11 +109,11 @@
               "$type": "Document",
               "DocumentIndex": 6,
               "Title": "Program.cs",
-              "DocumentMoniker": "C:\\Users\\skyla\\OneDrive\\Desktop\\Pizza App\\PizzaOrderApp\\Program.cs",
+              "DocumentMoniker": "C:\\Users\\skyla\\OneDrive\\Desktop\\Pizza App\\PizzaApp\\PizzaOrderApp\\Program.cs",
               "RelativeDocumentMoniker": "Program.cs",
-              "ToolTip": "C:\\Users\\skyla\\OneDrive\\Desktop\\Pizza App\\PizzaOrderApp\\Program.cs",
+              "ToolTip": "C:\\Users\\skyla\\OneDrive\\Desktop\\Pizza App\\PizzaApp\\PizzaOrderApp\\Program.cs",
               "RelativeToolTip": "Program.cs",
-              "ViewState": "AQIAACMAAAAAAAAAAAAAAFAAAAAAAAAA",
+              "ViewState": "AQIAACAAAAAAAAAAAIBJwFAAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-12-06T04:27:18.839Z",
               "EditorCaption": ""
@@ -121,18 +121,18 @@
           ]
         },
         {
-          "DockedWidth": 130,
+          "DockedWidth": 184,
           "SelectedChildIndex": 0,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 2,
               "Title": "OwnerLogin.cshtml",
-              "DocumentMoniker": "C:\\Users\\skyla\\OneDrive\\Desktop\\Pizza App\\PizzaOrderApp\\Views\\Home\\OwnerLogin.cshtml",
+              "DocumentMoniker": "C:\\Users\\skyla\\OneDrive\\Desktop\\Pizza App\\PizzaApp\\PizzaOrderApp\\Views\\Home\\OwnerLogin.cshtml",
               "RelativeDocumentMoniker": "Views\\Home\\OwnerLogin.cshtml",
-              "ToolTip": "C:\\Users\\skyla\\OneDrive\\Desktop\\Pizza App\\PizzaOrderApp\\Views\\Home\\OwnerLogin.cshtml",
+              "ToolTip": "C:\\Users\\skyla\\OneDrive\\Desktop\\Pizza App\\PizzaApp\\PizzaOrderApp\\Views\\Home\\OwnerLogin.cshtml",
               "RelativeToolTip": "Views\\Home\\OwnerLogin.cshtml",
-              "ViewState": "AQIAABIBAAAAAAAAAAAcwEUBAAAhAAAA",
+              "ViewState": "AQIAABsBAAAAAAAAAAAAADwBAAArAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
               "WhenOpened": "2024-12-06T05:58:18.192Z",
               "EditorCaption": ""
