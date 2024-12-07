@@ -6,7 +6,7 @@ This is a full-stack pizza management application designed for restaurant owners
 
 - **Owner Panel**: Manage available toppings (add, edit, delete).
 - **Chef Panel**: Create new pizzas, edit existing ones, and manage toppings.
-- **Persistent State**: Data is stored and updated in memory for this local implementation.
+- **Persistent State**: Data is stored and updated in memory for this implementation.
 - **Modern Design**: The frontend mimics Visual Studio’s dark theme for a sleek UI.
 
 ---
